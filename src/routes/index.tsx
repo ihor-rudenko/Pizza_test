@@ -28,7 +28,7 @@ function Home() {
         <div className="space-y-4">
           <Link 
             to="/products"
-            className="inline-block bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-md"
+            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-md"
           >
             🍕 Alle Produkte anzeigen
           </Link>
