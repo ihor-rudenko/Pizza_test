@@ -15,7 +15,7 @@ export const Route = createFileRoute('/')({
 // Diese Komponente wird angezeigt, wenn jemand die Startseite besucht
 function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-100 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-black-100 flex items-center justify-center">
       <div className="text-center p-8 bg-white rounded-lg shadow-lg max-w-2xl mx-4">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           🍕 Willkommen bei Pizza Test!

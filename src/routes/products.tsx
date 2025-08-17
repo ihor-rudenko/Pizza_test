@@ -1,5 +1,5 @@
 // Importiert die notwendigen Router-Funktionen
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute } from '@tanstack/react-router'
 
 // Erstellt eine Route für /products (URL: example.com/products)
 export const Route = createFileRoute('/products')({
