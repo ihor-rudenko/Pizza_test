@@ -96,7 +96,7 @@ function ProductsPage() {
 
   return (
     <div className="p-4 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold text-white-800 mb-6">Alle unsere Produkte</h1>
+      <h1 className="text-3xl font-bold text-white mb-6">Alle unsere Produkte</h1>
 
       {/* Beschreibung und Anzahl der Produkte */}
       <div className="mb-6 text-white-600">
