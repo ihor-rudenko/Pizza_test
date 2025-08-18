@@ -4,6 +4,9 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 // Importiert die Produktdaten aus der gameiro.json
 import gameiroData from '../gameiro.json'
 
+// Importiert die Produktkarte-Komponente
+import { ProductCard, Product } from '../components/ProductCard';
+
 // Erstellt eine Route für /products (URL: example.com/products)
 export const Route = createFileRoute('/products')({
   
@@ -37,76 +40,23 @@ export const Route = createFileRoute('/products')({
   component: ProductsPage,
 })
 
-
-// Produkt-Typ definieren
-interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  vegetarian: boolean;
-  ingredients: number;
-}
-
-// Produkte-Seite Komponente
 function ProductsPage() {
-
   // Lädt die Produktdaten aus dem Loader
   const products = Route.useLoaderData();  
-
-  // ProductCard einmal definieren
-  function ProductCard({ product }: { product: Product }) {
-
-    // Rendert eine einzelne Produktkarte
-    return (
-      <div className="bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-        <div className="flex justify-between items-start mb-3">
-          <h2 className="text-xl font-semibold text-gray-800 leading-tight">
-            {product.name}
-          </h2>
-          {product.vegetarian && (
-            <span className="bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
-              🌱 Vegetarisch
-            </span>
-          )}
-        </div>
-
-        <div className="flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
-          <p className="text-2xl font-bold text-green-600 mb-3">
-            {product.price.toFixed(2)} €
-          </p>
-
-          <p className="text-gray-600 mb-4 text-sm line-clamp-2">
-            {product.description}
-          </p>
-
-          <div className="flex items-center justify-between text-xs text-gray-500 mb-4 mt-auto">
-            <span>Kategorie: {product.category}</span>
-            <span>{product.ingredients} Zutaten</span>
-          </div>
-        </div>
-
-        <button className="w-full bg-orange-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
-          In den Warenkorb
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="p-4 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-white mb-6">Alle unsere Produkte</h1>
 
-      {/* Beschreibung und Anzahl der Produkte */}
       <div className="mb-6 text-white-600">
         <p>Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!</p>
         <p className="text-sm mt-2">Insgesamt {products.length} Produkte verfügbar</p>
       </div>
 
-      {/* Grid für Produktkarten */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map(product => (
+
+          // Rendert jede Produktkarte
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
