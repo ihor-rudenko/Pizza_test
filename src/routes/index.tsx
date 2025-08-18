@@ -15,22 +15,22 @@ export const Route = createFileRoute('/')({
 // Diese Komponente wird angezeigt, wenn jemand die Startseite besucht
 function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-black-100 flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center">
       <div className="text-center p-8 bg-white rounded-lg shadow-lg max-w-2xl mx-4">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           🍕 Willkommen bei Pizza Test!
         </h1>
         
         <p className="text-lg text-gray-600 mb-8">
-          Entdecke unsere köstlichen Pizzen und bestelle online!
+          Entdecke unsere köstlichen Menüs und bestelle online!
         </p>
         
         <div className="space-y-4">
           <Link 
             to="/products"
-            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition-colors shadow-md"
+            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-md"
           >
-            🍕 Alle Produkte anzeigen
+            Alle Produkte anzeigen
           </Link>
           
           <div className="text-sm text-gray-500">
