@@ -42,15 +42,15 @@ function ProductsPage() {
   const products = Route.useLoaderData();  
 
   return (
-    <div className="p-4 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold text-white mb-6">Alle unsere Produkte</h1>
+    <div className="product__page p-4 max-w-6xl mx-auto">
+      <h1 className="product__title text-3xl font-bold text-white mb-6">Alle unsere Produkte</h1>
 
-      <div className="mb-6 text-white-600">
-        <p>Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!</p>
-        <p className="text-sm mt-2">Insgesamt {products.length} Produkte verfügbar</p>
+      <div className="product__info mb-6 text-white-600">
+        <h3 className="product__subtitle">Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!</h3>
+        <p className="product__text text-sm mt-2">Insgesamt {products.length} Produkte verfügbar</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map(product => (
 
           // Rendert jede Produktkarte
@@ -59,10 +59,10 @@ function ProductsPage() {
       </div>
 
       {/* Link zurück zur Startseite */}
-      <div className="mt-8 text-center">
+      <div className="product__bottom mt-8 text-center">
         <Link 
           to="/" 
-          className="text-orange-600 hover:text-green-800 underline"
+          className="product__link text-orange-600 hover:text-green-800 underline"
         >
           ← Zurück zur Startseite
         </Link>
