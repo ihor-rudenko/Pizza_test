@@ -94,7 +94,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
 
-      <body className='bg-gradient-to-br from-blue-900 to-black-200'>
+      <body className='body bg-gradient-to-br from-blue-900 to-black-200'>
         {/* {children} wird durch den eigentlichen Seiteninhalt ersetzt */}
         {children}
 

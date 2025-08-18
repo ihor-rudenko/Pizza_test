@@ -24,6 +24,14 @@ export function ProductCard({ product }: { product: Product }) {
               🌱 Vegetarisch
             </span>
           )}
+
+          {/* Gleichwertiges Beispiel mit Ternary
+          
+          {product.vegetarian ? (
+            <span className="product-card__label bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
+              🌱 Vegetarisch
+            </span>
+          ) : null} */}
         </div>
 
         <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
