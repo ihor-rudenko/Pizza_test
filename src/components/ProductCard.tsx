@@ -14,6 +14,7 @@ export function ProductCard({ product }: { product: Product }) {
 
     // Rendert eine einzelne Produktkarte
     return (
+      // todo: Card mit weißem Hintergrund in eigene Komponente ausgelagern
       <div className="product-card bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
         <div className="product-card__top flex justify-between items-start mb-3">
           <h2 className="product-card__title text-xl font-semibold text-gray-800 leading-tight">
