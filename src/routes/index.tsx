@@ -1,8 +1,6 @@
 // Importiert die Funktion zum Erstellen einer Datei-basierten Route
 import { createFileRoute, Link } from '@tanstack/react-router'
 
-// import { products } from "../gameiro.json"
-
 // Erstellt eine Route für die Startseite (URL: /)
 // Das '/' bedeutet: Diese Route wird angezeigt, wenn jemand die Hauptseite besucht
 export const Route = createFileRoute('/')({
