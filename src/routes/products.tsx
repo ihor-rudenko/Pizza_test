@@ -1,11 +1,6 @@
-// Importiert die notwendigen Router-Funktionen
 import { createFileRoute, Link } from '@tanstack/react-router'
-
-// Importiert die Produktdaten aus der gameiro.json
 import gameiroData from '../gameiro.json'
-
-// Importiert die Produktkarte-Komponente
-import { ProductCard, Product } from '../components/ProductCard';
+import { ProductCard } from '../components/ProductCard';
 
 // Erstellt eine Route für /products (URL: example.com/products)
 export const Route = createFileRoute('/products')({
@@ -21,7 +16,9 @@ export const Route = createFileRoute('/products')({
         'Name' in product && 
         'Preise' in product && 
         'ID' in product
-      ) // Nur gültige Produkte mit allen notwendigen Eigenschaften
+      ) 
+      
+      // Nur gültige Produkte mit allen notwendigen Eigenschaften
       .map(product => ({
         id: (product as any).ID.toString(),
         name: (product as any).Name,
