@@ -34,9 +34,6 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           )} */}
           {/* -------------------------------------------------- */}
-
-
-          {/* -------------------------------------------------- */}
           {/* Gleichwertiges Beispiel mit Ternary */}
 
           {/* {product.vegetarian ? (
@@ -45,26 +42,19 @@ export function ProductCard({ product }: { product: Product }) {
             </span>
           ) : null} */}
           {/* -------------------------------------------------- */}
-
-
-          {/* -------------------------------------------------- */}
           {/* // Benutzung von CardLabel Komponent (für nur Vegetarische) zwei gleiche Variante*/}       
           {/* <CardLabel show={product.vegetarian &&} /> */}
 
           {product.vegetarian
-            ? <CardLabel className="product-card__label--meat">🌱 Vegetarisch</CardLabel>
+            ? <CardLabel className="product-card__label">🌱 Vegetarisch</CardLabel>
             : <CardLabel className="product-card__label--meat product-card__label">🥩 Mit Fleisch</CardLabel>
           }
-          { product.vegetarian && <CardLabel className="product-card__label--vegetarian">🌱 Vegetarisch</CardLabel> }
-          {/* -------------------------------------------------- */}        
+          
         </div>
 
         <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
-          {/* <p className="product-card__price text-2xl font-bold text-green-600 mb-3">
-            {product.price.toFixed(2)} €
-          </p> */}
-        <CardPrice className="foo-bar" value={product.price} />
-
+          
+          <CardPrice className="" value={product.price} />
 
           <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
             {product.description}
@@ -74,9 +64,9 @@ export function ProductCard({ product }: { product: Product }) {
             <span className='product-card__category'>Kategorie: {product.category}</span>
             <span className='product-card__ingredient'>{product.ingredients} Zutaten</span>
           </div>
+
         </div>
 
-        {/* Beispiel für Komponente mit flexiblem Text*/}    
         <CardButton></CardButton>
       </div>
     );

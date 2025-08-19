@@ -23,6 +23,7 @@
 /* -- my styles ---------------------------------------------------------------- */
 
 .product-card__label {
+  background-color: rgb(209, 238, 209);
   min-width: 105px;
   color: green;
   font-weight: 300;
