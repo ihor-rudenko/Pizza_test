@@ -25,3 +25,8 @@
 .card-button {
   /* background-color: blueviolet; */
 }
+
+.product-card__label--meat {
+  background-color: rgb(156, 202, 247);
+  color: rgb(2, 57, 184);
+}

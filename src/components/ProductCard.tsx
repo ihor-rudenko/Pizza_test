@@ -51,7 +51,8 @@ export function ProductCard({ product }: { product: Product }) {
 
           {product.vegetarian
             ? <CardLabel>🌱 Vegetarisch</CardLabel>
-            : <CardLabel className="bd-red-200">🥩 Mit Fleisch</CardLabel>
+            // : <CardLabel className="bg-red-200 text-red-800">🥩 Mit Fleisch</CardLabel>
+            : <CardLabel className="product-card__label--meat">🥩 Mit Fleisch</CardLabel>
           }
           {/* -------------------------------------------------- */}        
         </div>
