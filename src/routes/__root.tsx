@@ -16,10 +16,10 @@ import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
 
 // Importiert die DefaultCatchBoundary Komponente (Fehlerbehandlung)
-import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
+// import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 
 // Importiert die NotFound Komponente (404 Fehler)
-import { NotFound } from '~/components/NotFound'
+// import { NotFound } from '~/components/NotFound'
 
 // Importiert die Haupt-CSS-Datei der App
 import appCss from '~/styles/app.css?url'
@@ -76,10 +76,10 @@ export const Route = createRootRoute({
   }),
 
   // Legt fest, welche Komponente bei Fehlern angezeigt wird
-  errorComponent: DefaultCatchBoundary,
+  // errorComponent: DefaultCatchBoundary,
 
   // Legt fest, was bei 404-Fehlern (Seite nicht gefunden) angezeigt wird
-  notFoundComponent: () => <NotFound />,
+  // notFoundComponent: () => <NotFound />,
   
   // Legt fest, welche Komponente als "Schale" um die gesamte App dient
   shellComponent: RootDocument,
