@@ -1,22 +1,19 @@
 import type { ReactNode } from "react";
 
 type CardPriceProps = {
-    children?: ReactNode;
-    show?: boolean;
     className?: string;
+    value: number;
 }
 
-export const CardPrice = ({
-    children?: "",
-    className: userClassName = "",
-}: CardPriceProps) => {
-    const customPrice = useerClassName && useerClassName.trim().length > 0
-        ? userClassName
-        : "default-price";
+export const CardPrice = (props: CardPriceProps) => {
+    const {className, value} = props;
         
+    const defaultClassNames = "product-card__price text-2xl font-bold text-green-600 mb-3";
+    const combinedClassNames = className ? defaultClassNames + " " + className : defaultClassNames; 
+
     return (
-        <p className="product-card__price text-2xl font-bold text-green-600 mb-3">
-            {product.price.toFixed(2)} €
+        <p className={combinedClassNames}>
+            {value.toFixed(2)} €
         </p>
     )
 }

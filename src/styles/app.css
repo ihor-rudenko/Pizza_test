@@ -22,11 +22,22 @@
 }
 /* -- my styles ---------------------------------------------------------------- */
 
-.card-button {
-  /* background-color: blueviolet; */
+.product-card__label {
+  min-width: 105px;
+  color: green;
+  font-weight: 300;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 3px 8px;
+  border-radius: 12px;
 }
 
 .product-card__label--meat {
-  background-color: rgb(156, 202, 247);
+  background-color: rgb(209, 231, 254);
   color: rgb(2, 57, 184);
+}
+
+.default-label {
+  background: #000;
+  color: #fff;
 }

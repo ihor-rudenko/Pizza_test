@@ -55,6 +55,7 @@ export function ProductCard({ product }: { product: Product }) {
             ? <CardLabel className="product-card__label--meat">🌱 Vegetarisch</CardLabel>
             : <CardLabel className="product-card__label--meat product-card__label">🥩 Mit Fleisch</CardLabel>
           }
+          { product.vegetarian && <CardLabel className="product-card__label--vegetarian">🌱 Vegetarisch</CardLabel> }
           {/* -------------------------------------------------- */}        
         </div>
 
@@ -62,7 +63,7 @@ export function ProductCard({ product }: { product: Product }) {
           {/* <p className="product-card__price text-2xl font-bold text-green-600 mb-3">
             {product.price.toFixed(2)} €
           </p> */}
-        <CardPrice value={product.price} />
+        <CardPrice className="foo-bar" value={product.price} />
 
 
           <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
