@@ -1,4 +1,5 @@
 import { CardButton } from '../components/CardButton';
+import { CardLabel } from '../components/CardLabel';
 
 export interface Product {
   id: string;
@@ -14,25 +15,42 @@ export function ProductCard({ product }: { product: Product }) {
 
     // Rendert eine einzelne Produktkarte
     return (
-      // todo: Card mit weißem Hintergrund in eigene Komponente ausgelagern
       <div className="product-card bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
         <div className="product-card__top flex justify-between items-start mb-3">
           <h2 className="product-card__title text-xl font-semibold text-gray-800 leading-tight">
             {product.name}
           </h2>
-          {product.vegetarian && (
+          
+          {/* -------------------------------------------------- */}
+          {/* Beispiel für bedingte Anzeige eines Labels */}
+          {/* Wenn das Produkt vegetarisch ist, wird ein Label angezeigt */}
+          {/* Hier wird das Label nur angezeigt, wenn product.vegetarian true ist */}
+          
+          {/* {product.vegetarian && (
             <span className="product-card__label bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
               🌱 Vegetarisch
             </span>
-          )}
+          )} */}
+          {/* -------------------------------------------------- */}
 
-          {/* Gleichwertiges Beispiel mit Ternary
-          
-          {product.vegetarian ? (
+
+          {/* -------------------------------------------------- */}
+          {/* Gleichwertiges Beispiel mit Ternary */}
+
+          {/* {product.vegetarian ? (
             <span className="product-card__label bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
               🌱 Vegetarisch
             </span>
           ) : null} */}
+          {/* -------------------------------------------------- */}
+
+
+          {/* -------------------------------------------------- */}
+          {/* // Benutzung von CardLabel Komponent (für nur Vegetarische) zwei gleiche Variante*/} 
+          
+          {/* <CardLabel show={product.vegetarian &&} /> */}
+          {product.vegetarian && <CardLabel />}
+          {/* -------------------------------------------------- */}        
         </div>
 
         <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
@@ -50,7 +68,11 @@ export function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
 
+        {/* Beispiel für Komponente mit flexiblem Text*/}    
+        {/* <CardButton>Jetzt kaufen</CardButton> */}
+
         <CardButton/>
+
       </div>
     );
   }
