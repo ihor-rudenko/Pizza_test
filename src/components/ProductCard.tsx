@@ -46,10 +46,13 @@ export function ProductCard({ product }: { product: Product }) {
 
 
           {/* -------------------------------------------------- */}
-          {/* // Benutzung von CardLabel Komponent (für nur Vegetarische) zwei gleiche Variante*/} 
-          
+          {/* // Benutzung von CardLabel Komponent (für nur Vegetarische) zwei gleiche Variante*/}       
           {/* <CardLabel show={product.vegetarian &&} /> */}
-          {product.vegetarian && <CardLabel />}
+
+          {product.vegetarian
+            ? <CardLabel>🌱 Vegetarisch</CardLabel>
+            : <CardLabel className="bd-red-200">🥩 Mit Fleisch</CardLabel>
+          }
           {/* -------------------------------------------------- */}        
         </div>
 
@@ -69,10 +72,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Beispiel für Komponente mit flexiblem Text*/}    
-        {/* <CardButton>Jetzt kaufen</CardButton> */}
-
-        <CardButton/>
-
+        <CardButton></CardButton>
       </div>
     );
   }

@@ -2,9 +2,14 @@ type CardLabelProps = {
     // Optional props for CardLabel component (? - ist optional Prorerty)
     children?: React.ReactNode;
     show?: boolean;
+    className?: string;
 }
 
-export const CardLabel = ({ children = "🌱 Vegetarisch", show = true }: CardLabelProps) => {
+export const CardLabel = ({ 
+    children = "🌱 Vegetarisch", 
+    show = true, 
+    className = "",
+ }: CardLabelProps) => {
     if (!show) return null;
 
     return ( 
