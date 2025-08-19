@@ -1,5 +1,7 @@
 import { CardButton } from '../components/CardButton';
 import { CardLabel } from '../components/CardLabel';
+import { CardPrice } from '../components/CardPrice';
+
 
 export interface Product {
   id: string;
@@ -50,17 +52,18 @@ export function ProductCard({ product }: { product: Product }) {
           {/* <CardLabel show={product.vegetarian &&} /> */}
 
           {product.vegetarian
-            ? <CardLabel>🌱 Vegetarisch</CardLabel>
-            // : <CardLabel className="bg-red-200 text-red-800">🥩 Mit Fleisch</CardLabel>
-            : <CardLabel className="product-card__label--meat">🥩 Mit Fleisch</CardLabel>
+            ? <CardLabel className="product-card__label--meat">🌱 Vegetarisch</CardLabel>
+            : <CardLabel className="product-card__label--meat product-card__label">🥩 Mit Fleisch</CardLabel>
           }
           {/* -------------------------------------------------- */}        
         </div>
 
         <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
-          <p className="product-card__price text-2xl font-bold text-green-600 mb-3">
+          {/* <p className="product-card__price text-2xl font-bold text-green-600 mb-3">
             {product.price.toFixed(2)} €
-          </p>
+          </p> */}
+        <CardPrice value={product.price} />
+
 
           <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
             {product.description}

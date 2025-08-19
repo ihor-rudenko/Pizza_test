@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react';
+
 type CardLabelProps = {
     // Optional props for CardLabel component (? - ist optional Prorerty)
-    children?: React.ReactNode;
+    children?: ReactNode;
     // show?: boolean;
     className?: string;
 }
@@ -8,16 +10,16 @@ type CardLabelProps = {
 export const CardLabel = ({ 
     children = "🌱 Vegetarisch", 
     // show = true, 
-    className = "",
+    className: userClassName = "",
  }: CardLabelProps) => {
     // if (!show) return null;
 
-    const colorClasses = className && className.trim().length > 0
-        ? className
-        : "bg-green-100 text-green-800";
+    const customClasses = userClassName && userClassName.trim().length > 0
+        ? userClassName
+        : "default-label";
 
     return ( 
-        <span className={`product-card__label ${colorClasses} min-w-[105px] text-xs px-2 py-1 rounded-full`}>
+        <span className={`product-card__label ${customClasses}`}>
             {children}
         </span>
     )
