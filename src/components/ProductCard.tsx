@@ -1,6 +1,7 @@
-import { CardButton } from '../components/CardButton';
+import { CardTitle } from '../components/CardTitle';
 import { CardLabel } from '../components/CardLabel';
 import { CardPrice } from '../components/CardPrice';
+import { CardButton } from '../components/CardButton';
 export interface Product {
   id: string;
   name: string;
@@ -17,10 +18,10 @@ export function ProductCard({ product }: { product: Product }) {
     return (
       <div className="product-card bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
         <div className="product-card__top flex justify-between items-start mb-3">
-          <h2 className="product-card__title text-xl font-semibold text-gray-800 leading-tight">
-            {product.name}
-          </h2>
-          
+          {/* <CardTitle>{product.name}</CardTitle> */}
+
+          <CardTitle value={product.name}/>
+
           {/* -------------------------------------------------- */}
           {/* Beispiel für bedingte Anzeige eines Labels. Wenn das Produkt vegetarisch ist, wird ein Label angezeigt. Hier wird das Label nur angezeigt, wenn product.vegetarian true ist */}
           {/* -------------------------------------------------- */}
@@ -54,9 +55,6 @@ export function ProductCard({ product }: { product: Product }) {
           ) 
           } */}
          
-          {/* -------------------------------------------------- */}
-          {/* Reakisation beide labels gleichzeitig durch Komponent*/}
-          {/* -------------------------------------------------- */}
           {product.vegetarian
             ? <CardLabel className="product-card__label">🌱 Vegetarisch</CardLabel>
             : <CardLabel className="product-card__label--meat product-card__label">🥩 Mit Fleisch</CardLabel>
@@ -64,7 +62,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between"> 
-          <CardPrice className="" value={product.price} />
+          <CardPrice className="product-card__price" value={product.price} />
 
           <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
             {product.description}
