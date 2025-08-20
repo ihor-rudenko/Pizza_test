@@ -20,8 +20,11 @@
     outline: none !important;
   }
 }
-/* -- my styles ---------------------------------------------------------------- */
 
+/* -- my styles ------------------------------------------------------- */
+
+
+/* -- product-card__label -- */
 .product-card__label {
   background-color: rgb(209, 238, 209);
   min-width: 105px;
@@ -42,3 +45,28 @@
   background: #000;
   color: #fff;
 }
+/* -- /product-card__label -- */
+
+/* -- /product-card__label -- */
+.product-card__text {
+  color: gray;
+  font-size: 14px;
+  line-clamp: 2;
+  margin-bottom: 25px;
+}
+/* -- /product-card__label -- */
+
+/* -- product-card__details -- */
+.product-card__details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: orange;
+  margin-bottom: 16px;
+  margin-top: auto;
+}
+/* -- /product-card__details -- */
+
+
