@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: Product }) {
         {product.description}
       </CardDescr>
 
-      <div className="product-card__details">
+      <div className="product-card__details text-red-500">
         <CardCategory>
             Kategory: {product.category}
         </CardCategory>
