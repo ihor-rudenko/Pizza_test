@@ -135,6 +135,7 @@
             }
         ]
     },
+
     "menu": {
         "kategorien": {
             "11": {
@@ -380,6 +381,7 @@
                 ]
             }
         },
+
         "unterkategorien": {
             "1": {
                 "Name": "Weissweine",
@@ -412,6 +414,7 @@
                 "Order": 5
             }
         },
+
         "groessen": [
             {
                 "id": 4,
@@ -434,6 +437,7 @@
                 "name": "Blech"
             }
         ],
+
         "produkte": {
             "10": {
                 "ID": 10,
@@ -6205,6 +6209,7 @@
                 }
             }
         },
+
         "pakete": {
             "": {
                 "ID": null,
@@ -6322,6 +6327,7 @@
                 }
             }
         },
+
         "erlaubt_in_paket": {
             "11": [
                 1,
@@ -6352,6 +6358,7 @@
                 359
             ]
         },
+
         "zutaten": {
             "43": {
                 "Name": "Tomatensauce",
@@ -9572,6 +9579,7 @@
                 "CanBeFreeIngredient": true
             }
         },
+
         "zutatensort": [
             125,
             52,
@@ -9774,11 +9782,13 @@
             171,
             51
         ],
+
         "gratisZutaten": {
             "2": "Körnermix",
             "3": "Parmesan",
             "4": "mit Käse überbacken"
         },
+
         "wahlzutaten": {
             "11": {
                 "Name": "Dressings",
@@ -10649,12 +10659,19 @@
                 }
             }
         },
+
         "rabatte": [],
+
         "gratisAdditions": [],
+
         "standardSize": 2,
+
         "deselectionPriceCalculationModel": 0,
+
         "computePercentDiscount": "exact",
+
         "extrasInPackages": false,
+
         "aktionen": {
             "24": {
                 "Name": "TEMPO BELLO DI ASPARAGI",
@@ -10748,12 +10765,14 @@
                 ]
             }
         },
+
         "freetexts": {
             "4": "Allergene",
             "5": "LM-Kennzeichnung",
             "7": "Zutaten"
         }
     },
+
     "deliveryCost": {
         "type": "L",
         "options": {
@@ -11111,6 +11130,7 @@
             "deliveryCharge": "1.80"
         }
     },
+
     "legal": {
         "privacy": {
             "person": "Günter Kütemeier",
@@ -11134,6 +11154,7 @@
             "misc": "Vertretungsberechtigter:    Günter Kütemeier\r\n\r\nHandelsregister: AG Bad Oeynhausen HRA 3133"
         }
     },
+
     "notices": [
         {
             "title": "Online Bestellungen",
@@ -11217,6 +11238,7 @@
             "message": "<p>Jetzt gibt es jede Pizza auch als Calzone!</p>"
         }
     ],
+
     "paymentOptions": [
         "Barzahlung",
         "PayPal"
