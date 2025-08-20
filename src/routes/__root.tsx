@@ -12,50 +12,51 @@ import * as React from 'react'
 import appCss from '~/styles/app.css?url'
 
 // import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
-// Importiert die NotFound Komponente (404 Fehler)
 // import { NotFound } from '~/components/NotFound'
 
 // Erstellt und exportiert die Haupt-Route-Konfiguration
 // Diese Konfiguration definiert die Grundstruktur und die Haupt-Komponenten der App
 export const Route = createRootRoute({
 
-  // HeadContent ist eine Funktion, die den Inhalt des <head>-Tags der HTML-Seite definiert
   head: () => ({
     meta: [
       {
         charSet: 'utf-8',
       },
+
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
     ],
 
-  // Links sind Verweise auf externe Ressourcen wie CSS-Dateien, Icons und Skripte
     links: [
       { rel: 'stylesheet', href: appCss },
+
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
         href: '/apple-touch-icon.png',
       },
+
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
         href: '/favicon-32x32.png',
       },
+
       {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
         href: '/favicon-16x16.png',
       },
+
       { rel: 'manifest', href: '/site.webmanifest', color: '#fffff' },
       { rel: 'icon', href: '/favicon.ico' },
     ],
 
-  // Scripts sind JavaScript-Dateien, die in der App geladen werden 
     scripts: [
       {
         src: '/customScript.js',

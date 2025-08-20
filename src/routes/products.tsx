@@ -28,14 +28,6 @@ export const Route = createFileRoute('/products')({
         vegetarian: (product as any).Vegetarisch || false,
         ingredients: (product as any).Zutaten ? Object.keys((product as any).Zutaten).length : 0
       }))
-      // .sort((a, b) => a.name.localeCompare(b.name)) // Sortiert alphabetisch
-
-      // .sort((a, b) => {
-      //   const catA = a.category ?? '';
-      //   const catB = b.category ?? '';
-      //   const byCat = String(catA).localeCompare(String(catB));
-      //   return byCat !== 0 ? byCat : a.name.localeCompare(b.name);
-      // })
 
       .sort((a,b) => String(a.category ?? '').localeCompare(String(b.category ?? '')) || a.name.localeCompare(b.name))
     
