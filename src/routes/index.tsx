@@ -24,16 +24,13 @@ function Home() {
         </p>
         
         <div className="space-y-4">
-          <Link 
-            to="/products"
-            className="card-button inline-block bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-md"
-          >
+          <Link to="/products" className="card-button inline-block bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-md">
             Alle Produkte anzeigen
           </Link>
           
-          <div className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500">
             Klicke oben, um unsere Pizzen zu sehen!
-          </div>
+          </p>
         </div>
       </div>
     </div>

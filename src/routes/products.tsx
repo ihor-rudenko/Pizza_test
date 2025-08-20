@@ -52,18 +52,13 @@ function ProductsPage() {
 
       <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map(product => (
-
           // Rendert jede Produktkarte
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
-      {/* Link zurück zur Startseite */}
       <div className="product__bottom mt-8 text-center">
-        <Link 
-          to="/" 
-          className="product__link text-orange-600 hover:text-green-800 underline"
-        >
+        <Link to="/" className="product__link text-orange-600 hover:text-green-800 underline">
           ← Zurück zur Startseite
         </Link>
       </div>

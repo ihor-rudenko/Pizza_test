@@ -1,8 +1,6 @@
 import { CardButton } from '../components/CardButton';
 import { CardLabel } from '../components/CardLabel';
 import { CardPrice } from '../components/CardPrice';
-
-
 export interface Product {
   id: string;
   name: string;
@@ -24,47 +22,58 @@ export function ProductCard({ product }: { product: Product }) {
           </h2>
           
           {/* -------------------------------------------------- */}
-          {/* Beispiel für bedingte Anzeige eines Labels */}
-          {/* Wenn das Produkt vegetarisch ist, wird ein Label angezeigt */}
-          {/* Hier wird das Label nur angezeigt, wenn product.vegetarian true ist */}
-          
+          {/* Beispiel für bedingte Anzeige eines Labels. Wenn das Produkt vegetarisch ist, wird ein Label angezeigt. Hier wird das Label nur angezeigt, wenn product.vegetarian true ist */}
+          {/* -------------------------------------------------- */}
           {/* {product.vegetarian && (
             <span className="product-card__label bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
               🌱 Vegetarisch
             </span>
           )} */}
+
           {/* -------------------------------------------------- */}
           {/* Gleichwertiges Beispiel mit Ternary */}
-
+          {/* -------------------------------------------------- */}
           {/* {product.vegetarian ? (
             <span className="product-card__label bg-green-100 min-w-[105px] text-green-800 text-xs px-2 py-1 rounded-full">
               🌱 Vegetarisch
             </span>
           ) : null} */}
-          {/* -------------------------------------------------- */}
-          {/* // Benutzung von CardLabel Komponent (für nur Vegetarische) zwei gleiche Variante*/}       
-          {/* <CardLabel show={product.vegetarian &&} /> */}
 
+          {/* -------------------------------------------------- */}
+          {/* Beispiel mit Ternary (beide labels gleichzeitig) */}
+          {/* -------------------------------------------------- */}
+          {/* {product.vegetarian ? (
+            <span className="product-card__label">
+              🌱 Vegetarisch
+            </span>
+          ) : 
+          (
+            <span className="product-card__label product-card__label--meat">
+              🥩 Mit Fleisch
+            </span>
+          ) 
+          } */}
+         
+          {/* -------------------------------------------------- */}
+          {/* Reakisation beide labels gleichzeitig durch Komponent*/}
+          {/* -------------------------------------------------- */}
           {product.vegetarian
             ? <CardLabel className="product-card__label">🌱 Vegetarisch</CardLabel>
             : <CardLabel className="product-card__label--meat product-card__label">🥩 Mit Fleisch</CardLabel>
           }
-          
         </div>
 
-        <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between">
-          
+        <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between"> 
           <CardPrice className="" value={product.price} />
 
           <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
             {product.description}
           </p>
 
-          <div className="product-card__bottom flex items-center justify-between text-xs text-gray-500 mb-4 mt-auto">
+          <div className="product-card__details flex items-center justify-between text-xs text-gray-500 mb-4 mt-auto">
             <span className='product-card__category'>Kategorie: {product.category}</span>
             <span className='product-card__ingredient'>{product.ingredients} Zutaten</span>
           </div>
-
         </div>
 
         <CardButton></CardButton>

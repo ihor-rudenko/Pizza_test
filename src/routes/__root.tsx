@@ -7,7 +7,7 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+// import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
 import appCss from '~/styles/app.css?url'
 
@@ -85,7 +85,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className='body bg-gradient-to-br from-blue-900 to-black-200'>
         {children}
 
-        <TanStackRouterDevtools position="bottom-right" />
+        {/* <TanStackRouterDevtools position="bottom-right" /> */}
         
         <Scripts />
       </body>
