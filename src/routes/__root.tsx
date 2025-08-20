@@ -1,7 +1,5 @@
-// Das ist ein TypeScript-Kommentar, der Vite mitteilt, dass diese Datei Vite-spezifische Typen verwendet
 /// <reference types="vite/client" />
 
-//Importiert wichtige Funktionen aus der TanStack Router Bibliothek
 import {
   HeadContent,
   Link,
@@ -9,29 +7,20 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 
-// Importiert die Devtools für die TanStack Router Bibliothek
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
-// Importiert React (alle Funktionen)
 import * as React from 'react'
+import appCss from '~/styles/app.css?url'
 
-// Importiert die DefaultCatchBoundary Komponente (Fehlerbehandlung)
 // import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
-
 // Importiert die NotFound Komponente (404 Fehler)
 // import { NotFound } from '~/components/NotFound'
-
-// Importiert die Haupt-CSS-Datei der App
-import appCss from '~/styles/app.css?url'
 
 // Erstellt und exportiert die Haupt-Route-Konfiguration
 // Diese Konfiguration definiert die Grundstruktur und die Haupt-Komponenten der App
 export const Route = createRootRoute({
 
-  // Definiert alle HTML-Head-Elemente:
+  // HeadContent ist eine Funktion, die den Inhalt des <head>-Tags der HTML-Seite definiert
   head: () => ({
-
-    // Meta-Tags (Zeichensatz, Viewport)
     meta: [
       {
         charSet: 'utf-8',
@@ -42,7 +31,7 @@ export const Route = createRootRoute({
       },
     ],
 
-    // CSS-Links (Stylesheet, Icons, Manifest)
+  // Links sind Verweise auf externe Ressourcen wie CSS-Dateien, Icons und Skripte
     links: [
       { rel: 'stylesheet', href: appCss },
       {
@@ -66,7 +55,7 @@ export const Route = createRootRoute({
       { rel: 'icon', href: '/favicon.ico' },
     ],
 
-    // JavaScript-Dateien
+  // Scripts sind JavaScript-Dateien, die in der App geladen werden 
     scripts: [
       {
         src: '/customScript.js',
@@ -90,18 +79,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
       <head>
-        {/* HeadContent fügt alle notwendigen Meta-Tags und Links hinzu */}
         <HeadContent />
       </head>
 
       <body className='body bg-gradient-to-br from-blue-900 to-black-200'>
-        {/* {children} wird durch den eigentlichen Seiteninhalt ersetzt */}
         {children}
 
-        {/* TanStackRouterDevtools zeigt Router-Informationen an (nur in Entwicklung) */}
         <TanStackRouterDevtools position="bottom-right" />
         
-        {/* Scripts lädt alle notwendigen JavaScript-Dateien */}
         <Scripts />
       </body>
     </html>
