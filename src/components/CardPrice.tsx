@@ -9,7 +9,7 @@ export const CardPrice = (props: CardPriceProps) => {
     const {className, value} = props;
         
     const defaultClassNames = "text-2xl font-bold text-green-600 mb-3";
-    const combinedClassNames = className ? defaultClassNames + " " + className : defaultClassNames; 
+    const combinedClassNames = className ? className + " " + defaultClassNames : defaultClassNames; 
 
     return (
         <p className={combinedClassNames}>

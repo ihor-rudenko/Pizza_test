@@ -1,6 +1,7 @@
 import { CardTitle } from '../components/CardTitle';
 import { CardLabel } from '../components/CardLabel';
 import { CardPrice } from '../components/CardPrice';
+import { CardDescr } from '../components/CardDescr';
 import { CardButton } from '../components/CardButton';
 export interface Product {
   id: string;
@@ -20,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="product-card__top flex justify-between items-start mb-3">
           {/* <CardTitle>{product.name}</CardTitle> */}
 
-          <CardTitle value={product.name}/>
+          <CardTitle className='product-card__title' value={product.name}/>
 
           {/* -------------------------------------------------- */}
           {/* Beispiel für bedingte Anzeige eines Labels. Wenn das Produkt vegetarisch ist, wird ein Label angezeigt. Hier wird das Label nur angezeigt, wenn product.vegetarian true ist */}
@@ -61,17 +62,18 @@ export function ProductCard({ product }: { product: Product }) {
           }
         </div>
 
-        <div className="product-card__content flex flex-col flex-grow flex-shrink-0 basis-auto justify-between"> 
-          <CardPrice className="product-card__price" value={product.price} />
+        <CardPrice 
+          className="product-card__price" 
+          value={product.price}
+        />
 
-          <p className="product-card__descr text-gray-600 mb-4 text-sm line-clamp-2">
-            {product.description}
-          </p>
+        <CardDescr className="product-card__descr">
+          {product.description}
+        </CardDescr>
 
-          <div className="product-card__details flex items-center justify-between text-xs text-gray-500 mb-4 mt-auto">
-            <span className='product-card__category'>Kategorie: {product.category}</span>
-            <span className='product-card__ingredient'>{product.ingredients} Zutaten</span>
-          </div>
+        <div className="product-card__details flex items-center justify-between text-xs text-gray-500 mb-4 mt-auto">
+          <span className='product-card__category'>Kategorie: {product.category}</span>
+          <span className='product-card__ingredient'>{product.ingredients} Zutaten</span>
         </div>
 
         <CardButton></CardButton>
