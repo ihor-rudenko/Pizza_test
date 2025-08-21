@@ -14,8 +14,6 @@ import appCss from '~/styles/app.css?url'
 // import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 // import { NotFound } from '~/components/NotFound'
 
-// Erstellt und exportiert die Haupt-Route-Konfiguration
-// Diese Konfiguration definiert die Grundstruktur und die Haupt-Komponenten der App
 export const Route = createRootRoute({
 
   head: () => ({
@@ -65,13 +63,9 @@ export const Route = createRootRoute({
     ],
   }),
 
-  // Legt fest, welche Komponente bei Fehlern angezeigt wird
   // errorComponent: DefaultCatchBoundary,
-
-  // Legt fest, was bei 404-Fehlern (Seite nicht gefunden) angezeigt wird
   // notFoundComponent: () => <NotFound />,
   
-  // Legt fest, welche Komponente als "Schale" um die gesamte App dient
   shellComponent: RootDocument,
 })
 
