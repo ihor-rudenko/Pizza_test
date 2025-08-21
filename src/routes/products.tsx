@@ -34,7 +34,6 @@ function ProductsPage() {
   const products = Route.useLoaderData();
   const kategorien = gameiroData.menu.kategorien as Record<string, { Name?: string; Order?: number; produkte?: string[] }>
 
-
   const groups: Record<string, typeof products> = {};
   for (const p of products) {
     const key = String(p.category ?? 'other');
@@ -50,6 +49,7 @@ function ProductsPage() {
     const oa = getCatOrder(a);
     const ob = getCatOrder(b);
     if (oa !== ob) return oa - ob;
+    
     return getCatName(a).localeCompare(getCatName(b));
   });
 
