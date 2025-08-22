@@ -77,18 +77,6 @@ function ProductsPage() {
 
       <div className="category__wrapper flex flex-col gap-y-12">
         {categoryIds.map((catId) => (
-          // <div className="category__body" key={catId}>
-          //   <h2 className="product__category-name text-2xl font-semibold mb-4">
-          //     {getCategoryName(catId)}
-          //   </h2>
-
-          //   <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          //     {groups[catId].map((product) => (
-          //       <ProductCard key={product.id} product={product} />
-          //     ))}
-          //   </div>
-          // </div>
-
             <ProductCategory
               key={catId}                 
               title={getCategoryName(catId)}

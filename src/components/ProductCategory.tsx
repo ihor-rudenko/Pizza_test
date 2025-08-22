@@ -1,5 +1,6 @@
 import { ProductCard } from '../components/ProductCard';
 import { Product } from '../components/ProductCard';
+import { CategoryTitle } from '../components/CategoryTitle';
 
 type ProductsCategoryProps = {
     title: string;
@@ -12,11 +13,9 @@ export const ProductCategory = (props: ProductsCategoryProps) => {
 
     return (
         <div className="category__body">
-            <h2 className="product__category-name text-2xl font-semibold mb-4">
-              {title}
-            </h2>
+            <CategoryTitle>{title}</CategoryTitle>
 
-            <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="product__wrapper">
               {items.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

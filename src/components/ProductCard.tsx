@@ -5,14 +5,15 @@ import { CardDescr } from '../components/CardDescr';
 import { CardCategory } from '../components/CardCategory';
 import { CardIngredients } from '../components/CardIngredients';
 import { CardButton } from '../components/CardButton';
-export interface Product {
-  id: string;
-  name: string;
-  description?: string;
-  price: number;
-  category: string;
-  vegetarian?: boolean;
-  ingredients?: number;
+
+export type Product = {
+  id: string
+  name: string
+  description?: string
+  price: number
+  category?: string
+  vegetarian?: boolean
+  ingredients?: number
 }
 
 export function ProductCard({ product }: { product: Product }) {
