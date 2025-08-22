@@ -9,7 +9,7 @@ export const PageTitle = (props: PageTitleProps) => {
     const { children, className } = props;
 
     return (
-        <h1 className="product__title text-3xl font-bold text-white mb-6">
+        <h1 className={`page__title text-3xl font-bold mb-6 ${className ?? ''}`}>
             {children}
         </h1>
     )

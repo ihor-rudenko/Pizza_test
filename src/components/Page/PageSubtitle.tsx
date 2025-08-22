@@ -9,8 +9,10 @@ export const PageSubtitle = (props: PageSubtitleProps) => {
     const { children, className } = props;
 
     return (
-        <h3 className="product__subtitle mb-4">
+        <h3 className={`page__subtitle mb-4 ${className ?? ''}`}>
             {children}        
         </h3>
     )
 }   
+
+

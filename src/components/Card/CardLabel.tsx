@@ -15,7 +15,7 @@ export const CardLabel = ({
         : "default-label";
 
     return ( 
-        <span className={`product-card__label ${customClasses}`}>
+        <span className={`card__label ${customClasses}`}>
             {children}
         </span>
     )

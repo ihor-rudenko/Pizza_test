@@ -24,7 +24,7 @@ export const CardTitle =  (props: CardTitleProps) => {
     const { value, className } = props;
 
     return (
-        <h2 className="text-xl font-semibold text-gray-800 leading-tight">
+        <h2 className="card__title text-xl font-semibold text-gray-800 leading-tight">
             {value}
         </h2>
     )

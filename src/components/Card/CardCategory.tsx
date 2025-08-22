@@ -9,7 +9,7 @@ export const CardCategory = (props: CardCategoryProps) => {
     const { children, className } = props;
 
     return (
-        <span className = "product-card__category">
+        <span className = "card__category">
             {children}
         </span>
     )

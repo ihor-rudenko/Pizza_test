@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import gameiroData from '../gameiro.json'
-import { ProductCategory } from '../components/ProductCategory';
-import { PageTitle } from '../components/PageTitle';
-import { PageSubtitle } from '../components/PageSubtitle';
-import { PageInfo } from '~/components/PageInfo';
+import gameiroData from '../gameiro.json';
+import { Categories } from '../components/Category/Categories';
+import { PageTitle } from '../components/Page/PageTitle';
+import { PageSubtitle } from '../components/Page/PageSubtitle';
+import { PageInfo } from '~/components/Page/PageInfo';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
@@ -52,20 +52,20 @@ function ProductsPage() {
   })
 
   return (
-    <div className="product__page p-4 max-w-6xl mx-auto">
-      <PageTitle>Alle unsere Produkte</PageTitle>
+    <div className="products__page page p-4 max-w-6xl mx-auto">
+      <PageTitle className='page__title'>Alle unsere Produkte</PageTitle>
 
-      <PageSubtitle>
+      <PageSubtitle className='page__subtitle'>
         Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!
       </PageSubtitle>
 
-      <PageInfo>
+      <PageInfo className='page__info'>
         Insgesamt {products.length} Produkte verfügbar
       </PageInfo>
 
       <div className="category__wrapper flex flex-col gap-y-12 max-w-7xl">
         {categoryIds.map((catId) => (
-            <ProductCategory
+            <Categories className='categories'
               key={catId}                 
               title={getCategoryName(catId)}
               items={groups[catId] ?? []}
@@ -73,8 +73,8 @@ function ProductsPage() {
         ))}        
       </div>
 
-      <div className="product__bottom mt-8 text-center">
-        <Link to="/" className="product__link font-bold text-yellow-300 hover:text-green-800">
+      <div className="products__bottom mt-8 text-center">
+        <Link to="/" className="products__link font-bold text-yellow-300 hover:text-green-800">
           ← Zurück zur Startseite
         </Link>
       </div>
