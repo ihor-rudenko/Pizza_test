@@ -9,7 +9,7 @@ export const CategoryTitle =  (props: CategoryTitleProps) => {
     const { children, className } = props;
 
     return (
-        <h2 className="category__title text-2xl font-semibold mb-4">
+        <h2 className={`category__title ${className ?? ''}`}>
             {children}
         </h2>
     )

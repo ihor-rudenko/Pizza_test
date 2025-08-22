@@ -1,9 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import gameiroData from '../gameiro.json';
-import { Categories } from '../components/Category/Categories';
+import { Category } from '../components/Category/Category';
 import { PageTitle } from '../components/Page/PageTitle';
 import { PageSubtitle } from '../components/Page/PageSubtitle';
 import { PageInfo } from '~/components/Page/PageInfo';
+import { PageBottom } from '~/components/Page/PageBottom';
+import { CategoriesWrapper } from '../components/Category/CategoriesWrapper';
+import { Page } from '../components/Page/Page';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
@@ -52,33 +55,33 @@ function ProductsPage() {
   })
 
   return (
-    <div className="products__page page p-4 max-w-6xl mx-auto">
-      <PageTitle className='page__title'>Alle unsere Produkte</PageTitle>
+    <Page>
+      <PageTitle>Alle unsere Produkte</PageTitle>
 
-      <PageSubtitle className='page__subtitle'>
+      <PageSubtitle>
         Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!
       </PageSubtitle>
 
-      <PageInfo className='page__info'>
+      <PageInfo>
         Insgesamt {products.length} Produkte verfügbar
       </PageInfo>
 
-      <div className="category__wrapper flex flex-col gap-y-12 max-w-7xl">
+      <CategoriesWrapper>
         {categoryIds.map((catId) => (
-            <Categories className='categories'
+            <Category
               key={catId}                 
               title={getCategoryName(catId)}
               items={groups[catId] ?? []}
             />
         ))}        
-      </div>
+      </CategoriesWrapper>
 
-      <div className="products__bottom mt-8 text-center">
-        <Link to="/" className="products__link font-bold text-yellow-300 hover:text-green-800">
+      <PageBottom>
+        <Link to="/" className="page__link-back">
           ← Zurück zur Startseite
         </Link>
-      </div>
-    </div>
+      </PageBottom>
+    </Page>
   );
 }
 

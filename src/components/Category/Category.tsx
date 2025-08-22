@@ -8,14 +8,14 @@ type ProductsCategoryProps = {
     className?: string;
 }
 
-export const Categories = (props: ProductsCategoryProps) => {
+export const Category = (props: ProductsCategoryProps) => {
     const { title, items = [], className } = props;
 
     return (
-        <div className={`categories ${className ?? ''}`}>
-            <CategoryTitle className='category__title'>{title}</CategoryTitle>
+        <div className={`category ${className ?? ''}`}>
+            <CategoryTitle>{title}</CategoryTitle>
 
-            <CardsWrapper className="cards__wrapper">
+            <CardsWrapper>
                 {items.map((product) => (
                     <Card key={product.id} product={product} />
                 ))}
@@ -23,3 +23,6 @@ export const Categories = (props: ProductsCategoryProps) => {
         </div>
     )
 }
+
+
+// {`card__button ${className ?? ''}`}

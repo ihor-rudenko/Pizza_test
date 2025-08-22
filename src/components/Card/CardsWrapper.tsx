@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import type { ReactNode } from "react";
 
 type CardsWrapperProps = { 
     children?: ReactNode; 
@@ -6,10 +6,10 @@ type CardsWrapperProps = {
 }
 
 export const CardsWrapper = (props: CardsWrapperProps) => {
-        const { children } = props;
+        const { children, className } = props;
 
       return (
-        <div className="cards__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`cards__wrapper ${className ?? ''}`}>
             {children}
         </div>
     )

@@ -7,7 +7,7 @@ type CardLabelProps = {
 
 export const CardLabel = ({ 
     children = "🌱 Vegetarisch", 
-    className: userClassName = "",
+    className: userClassName = "card__label",
  }: CardLabelProps) => {
 
     const customClasses = userClassName && userClassName.trim().length > 0

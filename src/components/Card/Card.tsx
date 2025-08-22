@@ -5,6 +5,8 @@ import { CardDescr } from './CardDescr';
 import { CardCategory } from './CardCategory';
 import { CardIngredients } from './CardIngredients';
 import { CardButton } from './CardButton';
+import { CardDetails } from './CardDetails';
+import { CardTop } from './CardTop';
 
 export type Product = {
   id: string
@@ -14,40 +16,40 @@ export type Product = {
   category?: string
   vegetarian?: boolean
   ingredients?: number
+  className?: string
 }
 
 export function Card({ product }: { product: Product }) {
-
+  const { className } = product;
+  
   return (
-    <div className="card bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-      <div className="product-card__top flex justify-between items-start mb-3">
-        <CardTitle className='product-card__title' value={product.name}/>
+    <div className={`card ${className ?? ''}`}>
+      <CardTop>
+        <CardTitle value={product.name}/>
         
         {product.vegetarian
-          ? <CardLabel className="card__label">🌱 Vegetarisch</CardLabel>
-          : <CardLabel className="card__label--meat card__label">🥩 Mit Fleisch</CardLabel>
+          ? <CardLabel>🌱 Vegetarisch</CardLabel>
+          : <CardLabel className="card__label--meat">🥩 Mit Fleisch</CardLabel>
         }
-      </div>
+      </CardTop>
 
-      <CardPrice className="card__price" 
-        value={product.price}
-      />
+      <CardPrice value={product.price}/>
 
-      <CardDescr className='card__descr'>
+      <CardDescr>
         {product.description}
       </CardDescr>
 
-      <div className="card__details">
-        <CardCategory className='card__category'>
-            Kategory: {product.category}
+      <CardDetails>
+        <CardCategory>
+          Kategorie: {product.category}
         </CardCategory>
         
-        <CardIngredients className='card__ingredients'>
-            {product.ingredients} Zutaten
+        <CardIngredients>
+          {product.ingredients} Zutaten
         </CardIngredients>
-      </div>
+      </CardDetails>
 
-      <CardButton className="card__button"></CardButton>
+      <CardButton/>
     </div>
   );
 }

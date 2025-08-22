@@ -9,7 +9,7 @@ export const CardDescr = (props: CardDescrProps) => {
     const { children, className } = props;
 
     return (
-        <p className="card__descr">
+        <p className={`card__descr ${className ?? ''}`}>
           {children}
         </p>
     )

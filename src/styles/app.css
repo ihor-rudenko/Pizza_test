@@ -23,7 +23,42 @@
 
 /* -- my styles ------------------------------------------------------- */
 
-/* -- card__label -- */
+.page {
+  @apply p-4 max-w-6xl mx-auto;
+}
+
+.page__title {
+  @apply text-3xl font-bold mb-6;
+}
+
+.page__subtitle {
+  @apply mb-4;
+}
+
+.page__info {
+  @apply flex w-fit text-yellow-300 text-sm mb-4 ml-auto px-2 py-2 rounded-lg;
+}
+
+.categories__wrapper {
+  @apply flex flex-col gap-y-12 max-w-7xl
+}
+
+.cards__wrapper {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6
+}
+
+.card {
+  @apply bg-white flex flex-col rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow;
+}
+
+.card__top {
+  @apply flex justify-between items-start mb-3;
+}
+
+.card__title {
+  @apply text-xl font-semibold text-gray-800 leading-tight;
+}
+
 .card__label {
   background-color: rgb(209, 238, 209);
   min-width: 105px;
@@ -44,18 +79,14 @@
   background: #000;
   color: #fff;
 }
-/* -- /card__label -- */
 
-/* -- /card__label -- */
 .card__descr {
   color: gray;
   font-size: 14px;
   line-clamp: 2;
   margin-bottom: 25px;
 }
-/* -- /card__label -- */
 
-/* -- card__details -- */
 .card__details {
   display: flex;
   gap: 10px;
@@ -66,6 +97,26 @@
   margin-bottom: 16px;
   margin-top: auto;
 }
-/* -- /card__details -- */
+
+.card__button {
+  @apply w-full bg-orange-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors
+}
+
+.category__title {
+  @apply text-2xl font-semibold mb-4
+}
+
+.page__bottom {
+  @apply mt-8 text-center;
+}
+
+.page__link-back {
+  @apply font-bold text-yellow-300 hover:text-green-800;
+}
+
+
+
+
+
 
 

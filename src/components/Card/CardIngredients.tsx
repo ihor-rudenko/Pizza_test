@@ -9,7 +9,7 @@ export const CardIngredients = (props: CardIngredientsProps) => {
     const { className, children } = props;
 
     return (
-        <span className='card__ingredient'>
+        <span className={`card__ingredient ${className ?? ''}`}>
             {children} Zutaten
         </span>
     )
