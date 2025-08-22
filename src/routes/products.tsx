@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import gameiroData from '../gameiro.json'
-import { ProductCard } from '../components/ProductCard';
+// import { ProductCard } from '../components/ProductCard';
+import { ProductCategory } from '../components/ProductCategory';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
@@ -31,14 +32,20 @@ export const Route = createFileRoute('/products')({
 })
 
 function ProductsPage() {
+  // Load the products data from the route loader
+  // This will be available as `Route.useLoaderData()`
+  // and will trigger a re-render when the data changes
+  // This is similar to `useLoaderData` in React Router v6
+  // but works with the TanStack Router's file-based routing
+  // and is compatible with server-side rendering
+  // and static site generation
   const products = Route.useLoaderData();
 
   const kategorien = gameiroData.menu.kategorien as Record<string, { Name?: string; Order?: number; produkte?: string[] }>
 
   const getCategoryName = (id: string) => kategorien[id]?.Name ?? 'Sonstige'
 
-  const getCategoryOrder = (id: string) =>
-    typeof kategorien[id]?.Order === 'number' ? (kategorien[id]!.Order as number) : 999
+  const getCategoryOrder = (id: string) => typeof kategorien[id]?.Order === 'number' ? (kategorien[id]!.Order as number) : 999
 
   const groups: Record<string, typeof products> = {};
   for (const p of products) {
@@ -47,9 +54,9 @@ function ProductsPage() {
   }
 
   const categoryIds = Object.keys(groups).sort((a, b) => {
-    const oa = getCategoryOrder(a)
-    const ob = getCategoryOrder(b)
-    return oa - ob || getCategoryName(a).localeCompare(getCategoryName(b))
+    const orderA = getCategoryOrder(a)
+    const orderB = getCategoryOrder(b)
+    return orderA - orderB || getCategoryName(a).localeCompare(getCategoryName(b))
   })
 
   return (
@@ -68,21 +75,26 @@ function ProductsPage() {
         </p>
       </div>
 
-      <div className="category__body flex flex-col gap-y-12">
+      <div className="category__wrapper flex flex-col gap-y-12">
         {categoryIds.map((catId) => (
+          // <div className="category__body" key={catId}>
+          //   <h2 className="product__category-name text-2xl font-semibold mb-4">
+          //     {getCategoryName(catId)}
+          //   </h2>
 
-          <div className="category-wrapper" key={catId}>
-            <h2 className="product__category-name text-2xl font-semibold mb-4">
-              {getCategoryName(catId)}
-            </h2>
+          //   <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          //     {groups[catId].map((product) => (
+          //       <ProductCard key={product.id} product={product} />
+          //     ))}
+          //   </div>
+          // </div>
 
-            <div className="product__wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {groups[catId].map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-        ))}
+            <ProductCategory
+              key={catId}                 
+              title={getCategoryName(catId)}
+              items={groups[catId] ?? []}
+            />
+        ))}        
       </div>
 
       <div className="product__bottom mt-8 text-center">

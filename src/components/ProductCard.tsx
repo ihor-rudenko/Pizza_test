@@ -8,11 +8,11 @@ import { CardButton } from '../components/CardButton';
 export interface Product {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   price: number;
   category: string;
-  vegetarian: boolean;
-  ingredients: number;
+  vegetarian?: boolean;
+  ingredients?: number;
 }
 
 export function ProductCard({ product }: { product: Product }) {
