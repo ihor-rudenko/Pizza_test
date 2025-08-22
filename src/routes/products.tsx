@@ -2,6 +2,8 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import gameiroData from '../gameiro.json'
 import { ProductCategory } from '../components/ProductCategory';
 import { PageTitle } from '../components/PageTitle';
+import { PageSubtitle } from '../components/PageSubtitle';
+import { PageInfo } from '~/components/PageInfo';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
@@ -53,15 +55,13 @@ function ProductsPage() {
     <div className="product__page p-4 max-w-6xl mx-auto">
       <PageTitle>Alle unsere Produkte</PageTitle>
 
-      <div className="product__info mb-6 text-white-600">
-        <h3 className="product__subtitle">
-          Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!
-        </h3>
-        
-        <p className="product__text text-sm mt-2">
-          Insgesamt {products.length} Produkte verfügbar
-        </p>
-      </div>
+      <PageSubtitle>
+        Entdecke unsere köstlichen Pizzen, Pasta, Salate und mehr!
+      </PageSubtitle>
+
+      <PageInfo>
+        Insgesamt {products.length} Produkte verfügbar
+      </PageInfo>
 
       <div className="category__wrapper flex flex-col gap-y-12 max-w-7xl">
         {categoryIds.map((catId) => (
@@ -74,7 +74,7 @@ function ProductsPage() {
       </div>
 
       <div className="product__bottom mt-8 text-center">
-        <Link to="/" className="product__link text-orange-600 hover:text-green-800 underline">
+        <Link to="/" className="product__link font-bold text-yellow-300 hover:text-green-800">
           ← Zurück zur Startseite
         </Link>
       </div>

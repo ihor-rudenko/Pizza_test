@@ -12,7 +12,6 @@ import * as React from 'react'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
-
   head: () => ({
     meta: [
       {
@@ -71,10 +70,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
 
       <body className='body bg-gradient-to-br from-blue-900 to-black text-white'>
-        {children}
+          <header></header>
 
-        <TanStackRouterDevtools position="bottom-right" />
+          <main>
+            {children}
+
+            <TanStackRouterDevtools position="bottom-right" />
+          </main>
         
+          <footer></footer>
         <Scripts />
       </body>
     </html>
