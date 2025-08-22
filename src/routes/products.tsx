@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import gameiroData from '../gameiro.json'
-// import { ProductCard } from '../components/ProductCard';
 import { ProductCategory } from '../components/ProductCategory';
+import { PageTitle } from '../components/PageTitle';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
@@ -32,22 +32,12 @@ export const Route = createFileRoute('/products')({
 })
 
 function ProductsPage() {
-  // Load the products data from the route loader
-  // This will be available as `Route.useLoaderData()`
-  // and will trigger a re-render when the data changes
-  // This is similar to `useLoaderData` in React Router v6
-  // but works with the TanStack Router's file-based routing
-  // and is compatible with server-side rendering
-  // and static site generation
   const products = Route.useLoaderData();
-
   const kategorien = gameiroData.menu.kategorien as Record<string, { Name?: string; Order?: number; produkte?: string[] }>
-
   const getCategoryName = (id: string) => kategorien[id]?.Name ?? 'Sonstige'
-
   const getCategoryOrder = (id: string) => typeof kategorien[id]?.Order === 'number' ? (kategorien[id]!.Order as number) : 999
-
   const groups: Record<string, typeof products> = {};
+
   for (const p of products) {
     const key = String(p.category ?? 'other');
     (groups[key] ??= []).push(p);
@@ -61,9 +51,7 @@ function ProductsPage() {
 
   return (
     <div className="product__page p-4 max-w-6xl mx-auto">
-      <h1 className="product__title text-3xl font-bold text-white mb-6">
-        Alle unsere Produkte
-      </h1>
+      <PageTitle>Alle unsere Produkte</PageTitle>
 
       <div className="product__info mb-6 text-white-600">
         <h3 className="product__subtitle">
@@ -75,7 +63,7 @@ function ProductsPage() {
         </p>
       </div>
 
-      <div className="category__wrapper flex flex-col gap-y-12">
+      <div className="category__wrapper flex flex-col gap-y-12 max-w-7xl">
         {categoryIds.map((catId) => (
             <ProductCategory
               key={catId}                 

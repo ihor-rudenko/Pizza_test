@@ -15,7 +15,7 @@ export const ProductCategory = (props: ProductsCategoryProps) => {
         <div className="category__body">
             <CategoryTitle>{title}</CategoryTitle>
 
-            <div className="product__wrapper">
+            <div className="product__wrapper grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
               {items.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}

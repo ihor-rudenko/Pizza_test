@@ -23,7 +23,6 @@
 
 /* -- my styles ------------------------------------------------------- */
 
-
 /* -- product-card__label -- */
 .product-card__label {
   background-color: rgb(209, 238, 209);
@@ -68,16 +67,5 @@
   margin-top: auto;
 }
 /* -- /product-card__details -- */
-
-
-/* -- product-card__details -- */
-.product__wrapper {
- display: grid;
- grid-template-columns: repeat(3, 1fr);
- gap: 20px;
- 
-}
-/* -- /product-card__details -- */
-
 
 

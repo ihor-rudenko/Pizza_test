@@ -7,12 +7,9 @@ import {
   createRootRoute,
 } from '@tanstack/react-router'
 
-// import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import * as React from 'react'
 import appCss from '~/styles/app.css?url'
-
-// import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
-// import { NotFound } from '~/components/NotFound'
 
 export const Route = createRootRoute({
 
@@ -62,14 +59,10 @@ export const Route = createRootRoute({
       },
     ],
   }),
-
-  // errorComponent: DefaultCatchBoundary,
-  // notFoundComponent: () => <NotFound />,
   
-  shellComponent: RootDocument,
+  shellComponent: RootDocument,       
 })
 
-// Das ist die Haupt-HTML-Struktur der App
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
     <html>
@@ -77,10 +70,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
 
-      <body className='body bg-gradient-to-br from-blue-900 to-black-200'>
+      <body className='body bg-gradient-to-br from-blue-900 to-black text-white'>
         {children}
 
-        {/* <TanStackRouterDevtools position="bottom-right" /> */}
+        <TanStackRouterDevtools position="bottom-right" />
         
         <Scripts />
       </body>
