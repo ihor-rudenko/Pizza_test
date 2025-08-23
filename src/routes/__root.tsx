@@ -72,7 +72,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <body className='body bg-gradient-to-br from-blue-900 to-black text-white'>
           <header></header>
 
-          <main>
+          <main className='bg-fixed bg-[url(/image/pizza-product.jpg)] bg-fill lg:bg-center bg-right'>
             {children}
 
             <TanStackRouterDevtools position="bottom-right" />
