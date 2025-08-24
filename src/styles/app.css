@@ -28,15 +28,15 @@
 }
 
 .page__title {
-  @apply text-5xl font-bold mb-3;
+  @apply text-5xl font-bold mb-3 text-center;
 }
 
 .page__subtitle {
-  @apply mb-4;
+  @apply mb-4 text-center;
 }
 
 .page__info {
-  @apply flex w-fit text-yellow-300 text-sm mb-4 ml-auto px-2 py-2 rounded-lg;
+  @apply flex w-fit text-yellow-500 text-lg mb-4 mx-auto px-2 py-2 rounded-lg text-center ;
 }
 
 .categories__wrapper {

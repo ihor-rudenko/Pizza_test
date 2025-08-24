@@ -6,7 +6,8 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <div className="bg-[url(/image/pizza.jpg)] bg-cover bg-no-repeat lg:bg-center bg-right min-h-screen flex flex-col items-center justify-center px-2">
+    // <div className="bg-[url(/image/pizza.jpg)] bg-cover bg-no-repeat lg:bg-center bg-right min-h-screen flex flex-col items-center justify-center px-2">
+    <div className="bg-[url(/image/pizza-bg.jpg)] bg-cover bg-no-repeat lg:bg-center bg-right min-h-screen flex flex-col items-center justify-center px-2">
         {/* <span className='text-7xl mb-6'>🍕</span> */}
         <h1 className="text-6xl font-bold text-white mb-4 text-center lh-[120%]">
            Willkommen bei Pizza App!
