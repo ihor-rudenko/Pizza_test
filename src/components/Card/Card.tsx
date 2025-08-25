@@ -3,8 +3,6 @@ import { CardLabel } from './CardLabel';
 import { CardPrice } from './CardPrice';
 import { CardPrices } from './CardPrices';
 import { CardPricesItem } from './CardPricesItem';
-import { CardPricesName } from './CardPricesName';
-import { CardPricesValue } from './CardPricesValue';
 import { CardDescr } from './CardDescr';
 import { CardCategory } from './CardCategory';
 import { CardIngredients } from './CardIngredients';
@@ -42,15 +40,7 @@ export function Card({ product }: { product: Product }) {
 
       <CardPrices>
         {product.sizes.map((s) => (
-            <CardPricesItem key={s.id} size={s}>
-                <CardPricesName>
-                  {s.name}
-                </CardPricesName>
-
-                <CardPricesValue>
-                  {s.price} €
-                </CardPricesValue>
-            </CardPricesItem>
+            <CardPricesItem key={s.id} size={s} />
         ))}    
       </CardPrices>
 

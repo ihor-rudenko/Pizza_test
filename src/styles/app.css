@@ -120,7 +120,7 @@
 }
 
 .card__prices-item  {
- @apply w-fit text-[12px] text-blue-700 rounded bg-blue-200 px-2 py-1 leading-[100%]
+ @apply w-fit text-[12px] rounded bg-blue-200 px-2 py-1 leading-[100%]
 }
 
 .card__prices-name {
@@ -128,7 +128,7 @@
 }
 
 .card__prices-value {
-  @apply font-bold
+  @apply text-blue-700
 }
 
 .card__descr {
@@ -166,6 +166,26 @@
   @apply font-bold text-yellow-300 hover:text-green-800;
 }
 
+
+
+
+
+.filters {
+  @apply mb-6 grid gap-3 md:grid-cols-3
+}
+
+.filters__item {
+  @apply border rounded pl-3 pr-5 py-1 bg-white text-gray-700
+}
+
+.filters__label {
+  @apply inline-flex items-center gap-2
+}
+
+.filters__checkbox {
+  width: 20px;
+  height: 20px;
+}
 /* -- /products -- */
 
 

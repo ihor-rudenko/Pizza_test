@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+import { CardPricesName } from './CardPricesName';
+import { CardPricesValue } from './CardPricesValue';
 
 type CardPricesItemProps = {
     children: ReactNode;
@@ -9,8 +11,13 @@ type CardPricesItemProps = {
 export const CardPricesItem = ({ children, className, size }: CardPricesItemProps) => {
     return (
        <span key={size.id} className="card__prices-item">
-            {children}
+            <CardPricesName>
+                {size.name}
+            </CardPricesName>
+
+            <CardPricesValue>
+                {size.price} €
+            </CardPricesValue>     
         </span>
-        
     )
 }

@@ -148,22 +148,21 @@ function ProductsPage() {
         Insgesamt {products.length} Produkte verfügbar
       </PageInfo>
 
-      <div className="filters mb-6 grid gap-3 md:grid-cols-3">
+
+      
+
+      <div className="filters">
         <input
+          className="filters__input filters__item"
           type="text"
           placeholder="Suche nach Name ..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="border rounded px-3 py-2"
         />
 
-        <select
-          value={catFilter}
-          onChange={(e) => setCatFilter(e.target.value)}
-          className="border rounded px-3 py-2"
-        >
-
-        <option value="all">Alle Kategorien</option>
+        <select className="filters__select filters__item" value={catFilter} onChange={(e) => setCatFilter(e.target.value)}>
+          <option className='filters__option' value="all">Alle Kategorien</option>
+          
           {categoryList.map((c) => (
             <option key={c.id} value={c.id}>
               {c.name}
@@ -171,8 +170,9 @@ function ProductsPage() {
           ))}
         </select>
 
-        <label className="inline-flex items-center gap-2">
+        <label className="filters__label">
           <input
+            className='filters__checkbox'
             type="checkbox"
             checked={vegOnly}
             onChange={(e) => setVegOnly(e.target.checked)}
@@ -180,6 +180,9 @@ function ProductsPage() {
           Nur vegetarisch
         </label>
       </div>
+
+
+
 
       <CategoriesWrapper>
        {visibleCategoryIds.map((catId) => (
