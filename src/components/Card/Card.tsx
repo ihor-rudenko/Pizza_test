@@ -36,11 +36,17 @@ export function Card({ product }: { product: Product }) {
 
       <CardPrice value={product.price}/>
 
-      {product.sizes.map((s) => (
-        <span key={s.id} className="px-2 py-1 border rounded text-sm text-black">
-          {s.name}: {s.price} €
-        </span>
-      ))}
+      <div className="prices__list mb-3 flex gap-2 flex-wrap">
+        {product.sizes.map((s) => (
+          <span key={s.id} className="w-fit text-[12px] text-blue-700 rounded bg-blue-200 px-2 py-1 leading-[100%]">
+            <span className='font-bold text-orange-700 mr-1'>
+              {s.name}:
+            </span> 
+            
+            {s.price} €
+          </span>
+        ))}
+      </div>
 
       <CardDescr>
         {product.description}

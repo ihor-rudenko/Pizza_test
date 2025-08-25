@@ -40,10 +40,10 @@ export const Route = createFileRoute('/products')({
         sizes.sort((a, b) => (sizeOrderMap.get(a.id) ?? 999) - (sizeOrderMap.get(b.id) ?? 999))
 
         const basePrice =
-          Number(preise['2'] ?? NaN) ||
-          Number(preise['3'] ?? NaN) ||
-          Number(preise['4'] ?? NaN) ||
-          Number(preise['5'] ?? NaN) ||
+          Number(preise['4'] ?? NaN) || // S
+          Number(preise['3'] ?? NaN) || // M
+          Number(preise['2'] ?? NaN) || // L
+          Number(preise['5'] ?? NaN) || // XXL
         0
 
         return {

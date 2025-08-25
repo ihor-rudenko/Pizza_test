@@ -102,8 +102,8 @@
 }
 
 .card__label--meat {
-  background-color: rgb(209, 231, 254);
-  color: rgb(2, 57, 184);
+  background-color: rgb(240, 222, 247);
+  color: rgb(101, 14, 139);
 }
 
 .default-label {
@@ -116,6 +116,7 @@
   font-size: 14px;
   line-clamp: 2;
   margin-bottom: 25px;
+  line-height: 130%;
 }
 
 .card__details {
