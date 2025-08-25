@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import gameiroData from '../gameiro.json';
-import { Category } from '../components/Category/Category';
+import { Page } from '../components/Page/Page';
 import { PageTitle } from '../components/Page/PageTitle';
 import { PageSubtitle } from '../components/Page/PageSubtitle';
 import { PageInfo } from '~/components/Page/PageInfo';
-import { PageBottom } from '~/components/Page/PageBottom';
 import { CategoriesWrapper } from '../components/Category/CategoriesWrapper';
-import { Page } from '../components/Page/Page';
+import { Category } from '../components/Category/Category';
+import { PageBottom } from '../components/Page/PageBottom';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {

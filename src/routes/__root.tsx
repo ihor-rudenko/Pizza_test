@@ -16,6 +16,7 @@ export const Route = createRootRoute({
     meta: [
       {
         charSet: 'utf-8',
+        title: 'Pizza App',
       },
 
       {
