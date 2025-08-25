@@ -23,6 +23,3 @@ export const Category = (props: ProductsCategoryProps) => {
         </div>
     )
 }
-
-
-// {`card__button ${className ?? ''}`}
