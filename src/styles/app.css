@@ -111,6 +111,26 @@
   color: #fff;
 }
 
+.card__price {
+  @apply text-2xl font-bold text-green-600 mb-3
+}
+
+.card__prices {
+  @apply mb-3 flex gap-2 flex-wrap
+}
+
+.card__prices-item  {
+ @apply w-fit text-[12px] text-blue-700 rounded bg-blue-200 px-2 py-1 leading-[100%]
+}
+
+.card__prices-name {
+  @apply font-bold mr-1 text-orange-600
+}
+
+.card__prices-value {
+  @apply font-bold
+}
+
 .card__descr {
   color: gray;
   font-size: 14px;

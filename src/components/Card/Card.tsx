@@ -1,6 +1,10 @@
 import { CardTitle } from './CardTitle';
 import { CardLabel } from './CardLabel';
 import { CardPrice } from './CardPrice';
+import { CardPrices } from './CardPrices';
+import { CardPricesItem } from './CardPricesItem';
+import { CardPricesName } from './CardPricesName';
+import { CardPricesValue } from './CardPricesValue';
 import { CardDescr } from './CardDescr';
 import { CardCategory } from './CardCategory';
 import { CardIngredients } from './CardIngredients';
@@ -36,17 +40,19 @@ export function Card({ product }: { product: Product }) {
 
       <CardPrice value={product.price}/>
 
-      <div className="prices__list mb-3 flex gap-2 flex-wrap">
+      <CardPrices>
         {product.sizes.map((s) => (
-          <span key={s.id} className="w-fit text-[12px] text-blue-700 rounded bg-blue-200 px-2 py-1 leading-[100%]">
-            <span className='font-bold text-orange-700 mr-1'>
-              {s.name}:
-            </span> 
-            
-            {s.price} €
-          </span>
-        ))}
-      </div>
+            <CardPricesItem key={s.id} size={s}>
+                <CardPricesName>
+                  {s.name}
+                </CardPricesName>
+
+                <CardPricesValue>
+                  {s.price} €
+                </CardPricesValue>
+            </CardPricesItem>
+        ))}    
+      </CardPrices>
 
       <CardDescr>
         {product.description}
