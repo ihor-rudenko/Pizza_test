@@ -135,10 +135,188 @@
             }
         ]
     },
-
     "menu": {
         "kategorien": {
-            "1": {
+            "11": {
+                "Name": "Pizza",
+                "noMinOrderValue": false,
+                "Order": 1,
+                "produkte": [
+                    "01",
+                    "02",
+                    "03",
+                    "04",
+                    "05",
+                    "06",
+                    "07",
+                    "08",
+                    "09",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16",
+                    "17",
+                    "18",
+                    "20",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "29",
+                    "71",
+                    "72",
+                    "73",
+                    "74",
+                    "75",
+                    "76",
+                    "78"
+                ]
+            },
+            "12": {
+                "Name": "Pasta",
+                "noMinOrderValue": false,
+                "Order": 3,
+                "produkte": [
+                    "30",
+                    "31",
+                    "32",
+                    "35",
+                    "36",
+                    "37",
+                    "38",
+                    "39",
+                    "60",
+                    "62",
+                    "63",
+                    "64",
+                    "67"
+                ]
+            },
+            "13": {
+                "Name": "Salate",
+                "noMinOrderValue": false,
+                "Order": 4,
+                "produkte": [
+                    "40",
+                    "41",
+                    "42",
+                    "42a",
+                    "42b",
+                    "43",
+                    "44",
+                    "46",
+                    "48",
+                    "49",
+                    "51"
+                ]
+            },
+            "14": {
+                "Name": "Pizzabrötchen",
+                "noMinOrderValue": false,
+                "Order": 2,
+                "produkte": [
+                    "19",
+                    "19a"
+                ]
+            },
+            "15": {
+                "Name": "Klassiker",
+                "noMinOrderValue": false,
+                "Order": 6,
+                "produkte": [
+                    "65",
+                    "66",
+                    "83",
+                    "84",
+                    "86",
+                    "86.1",
+                    "86.2"
+                ]
+            },
+            "16": {
+                "Name": "Snacks",
+                "noMinOrderValue": false,
+                "Order": 5,
+                "produkte": [
+                    "80",
+                    "81",
+                    "82",
+                    "85",
+                    "87",
+                    "88",
+                    "89",
+                    "90",
+                    "91",
+                    "93",
+                    "94",
+                    "95",
+                    "99"
+                ]
+            },
+            "17": {
+                "Name": "Desserts",
+                "noMinOrderValue": false,
+                "Order": 9,
+                "produkte": [
+                    "96",
+                    "96.1",
+                    "98 a",
+                    "98 c"
+                ]
+            },
+            "18": {
+                "Name": "Getränke",
+                "noMinOrderValue": true,
+                "Order": 7,
+                "produkte": [
+                    "570",
+                    "571",
+                    "572",
+                    "573",
+                    "578",
+                    "579",
+                    "580",
+                    "581",
+                    "582",
+                    "583",
+                    "587"
+                ]
+            },
+            "20": {
+                "Name": "Starorder",
+                "noMinOrderValue": false,
+                "Order": 10
+            },
+            "21": {
+                "Name": "Dressings + Dips",
+                "noMinOrderValue": false,
+                "Order": 11,
+                "produkte": [
+                    "AD",
+                    "AI",
+                    "BAL",
+                    "BD",
+                    "CHD",
+                    "FD",
+                    "JD"
+                ]
+            },
+            "22": {
+                "Name": "Filialangebote",
+                "noMinOrderValue": false,
+                "Order": 12
+            },
+            "23": {
+                "Name": "Schnitzel",
+                "noMinOrderValue": false,
+                "Order": 8
+            },
+            "": {
                 "produkte": [
                     "",
                     "",
@@ -200,189 +378,8 @@
                     "XS 6",
                     "XS 7"
                 ]
-            },
-            "2": {
-                "Name": "Pizza",
-                "noMinOrderValue": false,
-                "Order": 1,
-                "produkte": [
-                    "01",
-                    "02",
-                    "03",
-                    "04",
-                    "05",
-                    "06",
-                    "07",
-                    "08",
-                    "09",
-                    "10",
-                    "11",
-                    "12",
-                    "13",
-                    "14",
-                    "15",
-                    "16",
-                    "17",
-                    "18",
-                    "20",
-                    "21",
-                    "22",
-                    "23",
-                    "24",
-                    "25",
-                    "26",
-                    "29",
-                    "71",
-                    "72",
-                    "73",
-                    "74",
-                    "75",
-                    "76",
-                    "78"
-                ]
-            },
-            "3": {
-                "Name": "Pasta",
-                "noMinOrderValue": false,
-                "Order": 3,
-                "produkte": [
-                    "30",
-                    "31",
-                    "32",
-                    "35",
-                    "36",
-                    "37",
-                    "38",
-                    "39",
-                    "60",
-                    "62",
-                    "63",
-                    "64",
-                    "67"
-                ]
-            },
-            "4": {
-                "Name": "Salate",
-                "noMinOrderValue": false,
-                "Order": 4,
-                "produkte": [
-                    "40",
-                    "41",
-                    "42",
-                    "42a",
-                    "42b",
-                    "43",
-                    "44",
-                    "46",
-                    "48",
-                    "49",
-                    "51"
-                ]
-            },
-            "5": {
-                "Name": "Pizzabrötchen",
-                "noMinOrderValue": false,
-                "Order": 2,
-                "produkte": [
-                    "19",
-                    "19a"
-                ]
-            },
-            "6": {
-                "Name": "Klassiker",
-                "noMinOrderValue": false,
-                "Order": 6,
-                "produkte": [
-                    "65",
-                    "66",
-                    "83",
-                    "84",
-                    "86",
-                    "86.1",
-                    "86.2"
-                ]
-            },
-            "7": {
-                "Name": "Snacks",
-                "noMinOrderValue": false,
-                "Order": 5,
-                "produkte": [
-                    "80",
-                    "81",
-                    "82",
-                    "85",
-                    "87",
-                    "88",
-                    "89",
-                    "90",
-                    "91",
-                    "93",
-                    "94",
-                    "95",
-                    "99"
-                ]
-            },
-            "8": {
-                "Name": "Desserts",
-                "noMinOrderValue": false,
-                "Order": 9,
-                "produkte": [
-                    "96",
-                    "96.1",
-                    "98 a",
-                    "98 c"
-                ]
-            },
-            "9": {
-                "Name": "Getränke",
-                "noMinOrderValue": true,
-                "Order": 7,
-                "produkte": [
-                    "570",
-                    "571",
-                    "572",
-                    "573",
-                    "578",
-                    "579",
-                    "580",
-                    "581",
-                    "582",
-                    "583",
-                    "587"
-                ]
-            },
-            "10": {
-                "Name": "Starorder",
-                "noMinOrderValue": false,
-                "Order": 10
-            },
-            "11": {
-                "Name": "Dressings + Dips",
-                "noMinOrderValue": false,
-                "Order": 11,
-                "produkte": [
-                    "AD",
-                    "AI",
-                    "BAL",
-                    "BD",
-                    "CHD",
-                    "FD",
-                    "JD"
-                ]
-            },
-            "12": {
-                "Name": "Filialangebote",
-                "noMinOrderValue": false,
-                "Order": 12
-            },
-            "13": {
-                "Name": "Schnitzel",
-                "noMinOrderValue": false,
-                "Order": 8
             }
-            
         },
-
         "unterkategorien": {
             "1": {
                 "Name": "Weissweine",
@@ -415,7 +412,6 @@
                 "Order": 5
             }
         },
-
         "groessen": [
             {
                 "id": 4,
@@ -438,7 +434,6 @@
                 "name": "Blech"
             }
         ],
-
         "produkte": {
             "10": {
                 "ID": 10,
@@ -6210,7 +6205,6 @@
                 }
             }
         },
-
         "pakete": {
             "": {
                 "ID": null,
@@ -6328,7 +6322,6 @@
                 }
             }
         },
-
         "erlaubt_in_paket": {
             "11": [
                 1,
@@ -6359,7 +6352,6 @@
                 359
             ]
         },
-
         "zutaten": {
             "43": {
                 "Name": "Tomatensauce",
@@ -9580,7 +9572,6 @@
                 "CanBeFreeIngredient": true
             }
         },
-
         "zutatensort": [
             125,
             52,
@@ -9783,13 +9774,11 @@
             171,
             51
         ],
-
         "gratisZutaten": {
             "2": "Körnermix",
             "3": "Parmesan",
             "4": "mit Käse überbacken"
         },
-
         "wahlzutaten": {
             "11": {
                 "Name": "Dressings",
@@ -10660,19 +10649,12 @@
                 }
             }
         },
-
         "rabatte": [],
-
         "gratisAdditions": [],
-
         "standardSize": 2,
-
         "deselectionPriceCalculationModel": 0,
-
         "computePercentDiscount": "exact",
-
         "extrasInPackages": false,
-
         "aktionen": {
             "24": {
                 "Name": "TEMPO BELLO DI ASPARAGI",
@@ -10766,14 +10748,12 @@
                 ]
             }
         },
-
         "freetexts": {
             "4": "Allergene",
             "5": "LM-Kennzeichnung",
             "7": "Zutaten"
         }
     },
-
     "deliveryCost": {
         "type": "L",
         "options": {
@@ -11131,7 +11111,6 @@
             "deliveryCharge": "1.80"
         }
     },
-
     "legal": {
         "privacy": {
             "person": "Günter Kütemeier",
@@ -11155,7 +11134,6 @@
             "misc": "Vertretungsberechtigter:    Günter Kütemeier\r\n\r\nHandelsregister: AG Bad Oeynhausen HRA 3133"
         }
     },
-
     "notices": [
         {
             "title": "Online Bestellungen",
@@ -11239,7 +11217,6 @@
             "message": "<p>Jetzt gibt es jede Pizza auch als Calzone!</p>"
         }
     ],
-
     "paymentOptions": [
         "Barzahlung",
         "PayPal"

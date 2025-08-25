@@ -90,7 +90,7 @@ function ProductsPage() {
       if (vegOnly && !p.vegetarian) return false
 
       if (searchText) {
-        const productText = (p.name + ' ' + (p.description ?? '')).toLowerCase()
+        const productText = p.name.toLowerCase()
         if (!productText.includes(searchText)) return false
       }
       return true
@@ -131,7 +131,7 @@ function ProductsPage() {
       <div className="filters mb-6 grid gap-3 md:grid-cols-3">
         <input
           type="text"
-          placeholder="Suche nach Name oder Beschreibung..."
+          placeholder="Suche nach Name ..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           className="border rounded px-3 py-2"
