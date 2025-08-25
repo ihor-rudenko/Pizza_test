@@ -17,6 +17,7 @@ export type Product = {
   vegetarian?: boolean
   ingredients?: number
   className?: string
+  sizes: { id: string; name?: string; price: number }[]
 }
 
 export function Card({ product }: { product: Product }) {
@@ -34,6 +35,12 @@ export function Card({ product }: { product: Product }) {
       </CardTop>
 
       <CardPrice value={product.price}/>
+
+      {product.sizes.map((s) => (
+        <span key={s.id} className="px-2 py-1 border rounded text-sm text-black">
+          {s.name}: {s.price} €
+        </span>
+      ))}
 
       <CardDescr>
         {product.description}

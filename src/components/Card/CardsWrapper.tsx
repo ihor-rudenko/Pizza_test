@@ -13,8 +13,6 @@ export const CardsWrapper = (props: CardsWrapperProps) => {
             {children}
         </div>
     )
-    
-
 }
   
 

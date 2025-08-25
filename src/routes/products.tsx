@@ -13,37 +13,51 @@ import { PageBottom } from '../components/Page/PageBottom';
 
 export const Route = createFileRoute('/products')({
   loader: async () => {
-    const kategorien = gameiroData.menu.kategorien as Record<string, { Name?: string; Order?: number; produkte?: string[] }>
+    const kategorien = gameiroData.menu.kategorien as Record<string, { Name?: string; Order?: number }>
+    const groessen = gameiroData.menu.groessen as Array<{ id: number; name: string }>
+
+    const sizeOrderMap = new Map<string, number>()
+    
+    groessen.forEach((g, i) => sizeOrderMap.set(String(g.id), i))
 
     const products = Object.values<any>(gameiroData.menu.produkte)
-      .filter(
-        (product) =>
-          product &&
-          typeof product === 'object' &&
-          'Name' in product &&
-          'Preise' in product &&
-          'ID' in product
-      )
-      .map((product) => {
-        const categoryId = String((product as any).Kategorie ?? 'other')
-        const cat = kategorien[categoryId]
-        return {
-          id: String((product as any).ID),
-          name: (product as any).Name,
-          description: (product as any).Beschreibung || '',
-          price:
-            (product as any).Preise?.['2'] ||
-            (product as any).Preise?.['3'] ||
-            (product as any).Preise?.['4'] ||
-            0,
+      .filter(p => p && typeof p === 'object' && 'Name' in p && 'Preise' in p && 'ID' in p)
 
+      .map((raw: any) => {
+        const categoryId = String(raw.Kategorie ?? 'other')
+        const cat = kategorien[categoryId]
+
+        const sizes: Array<{ id: string; name: string; price: number }> = []
+        const preise = raw.Preise ?? {}
+
+        for (const id in preise) {
+          const priceNum = Number(preise[id])
+          const g = groessen.find(x => String(x.id) === String(id))
+          if (!g || !isFinite(priceNum)) continue
+          sizes.push({ id: String(id), name: g.name, price: priceNum })
+        }
+
+        sizes.sort((a, b) => (sizeOrderMap.get(a.id) ?? 999) - (sizeOrderMap.get(b.id) ?? 999))
+
+        const basePrice =
+          Number(preise['2'] ?? NaN) ||
+          Number(preise['3'] ?? NaN) ||
+          Number(preise['4'] ?? NaN) ||
+          Number(preise['5'] ?? NaN) ||
+        0
+
+        return {
+          id: String(raw.ID),
+          name: raw.Name,
+          description: raw.Beschreibung ?? '',
+          sizes,               
+          price: basePrice, 
+          category: cat?.Name ?? 'Sonstige',     
           categoryId,
           categoryName: cat?.Name ?? 'Sonstige',
-          categoryOrder: typeof cat?.Order === 'number' ? (cat!.Order as number) : 999,
-          vegetarian: Boolean((product as any).Vegetarisch),
-          ingredients: (product as any).Zutaten
-            ? Object.keys((product as any).Zutaten).length
-            : 0,
+          categoryOrder: typeof cat?.Order === 'number' ? cat.Order : 999,
+          vegetarian: Boolean(raw.Vegetarisch),
+          ingredients: raw.Zutaten ? Object.keys(raw.Zutaten).length : 0,
         }
       })
 
@@ -52,10 +66,10 @@ export const Route = createFileRoute('/products')({
           a.categoryOrder - b.categoryOrder ||
           a.categoryName.localeCompare(b.categoryName) ||
           a.name.localeCompare(b.name)
-      )
+      ) 
 
-    return products
-  },
+      return products
+    },
 
   component: ProductsPage,
 })
@@ -68,7 +82,7 @@ function ProductsPage() {
   const [catFilter, setCatFilter] = useState<'all' | string>('all') 
 
   const categoryList = useMemo(() => {
-    const map = new Map<string, { id: string; name: string; order: number }>()
+    const map = new Map <string, { id: string; name: string; order: number }>()
     
     for (const p of products) {
       map.set(p.categoryId, {
@@ -97,11 +111,17 @@ function ProductsPage() {
     })
   }, [products, query, vegOnly, catFilter])
 
-  const groups: Record<string, typeof filtered> = useMemo(() => {
-    const g: Record<string, typeof filtered> = {}
+  const groups: Record <string, typeof filtered> = useMemo(() => {
+    const g: Record <string, typeof filtered> = {}
+
     for (const p of filtered) {
-      ;(g[p.categoryId] ??= []).push(p)
+      if(!g[p.categoryId]) { 
+        g[p.categoryId] = []
+      }
+
+      g[p.categoryId].push(p)
     }
+    
     return g
   }, [filtered])
 
